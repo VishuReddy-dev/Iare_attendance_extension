@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Attendance Average Calculator",
+    "version": "1.0",
+    "description": "Calculates and displays average attendance percentage below the table.",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "*://samvidha.iare.ac.in/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://samvidha.iare.ac.in/home?action=stud_att_STD*",
+                "*://samvidha.iare.ac.in/home?action=std_bio"
+            ],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_icon": "icon.png"
+    }
+}
+  
